@@ -73,7 +73,7 @@
     </div>
   </div>
   <div class="green-thumb_result">
-    <div id="no-results" class="green-thumb_no-results">
+    <div *ngIf="!plantsList" id="no-results" class="green-thumb_no-results">
       <div>
         <h1>No results yet…</h1>
         <p>
@@ -96,7 +96,7 @@
           <li *ngFor="let item of plantsList" class="green-thumb_list-item">
             <div class="green-thumb_list-container">
               <div class="green-thumb_image-container">
-                <img class="green-thumb_item-image" id="plantsImage" src="item.url"/>
+                <img class="green-thumb_item-image" id="plantsImage" src="{{item.url}}"/>
                 <p class="green-thumb_item-title">{{item.name}}</p>
               </div>
               <div class="green-thumb_item-data">

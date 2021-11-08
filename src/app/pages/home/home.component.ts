@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { from } from 'rxjs';
 import { RequestPlants } from 'src/app/interfaces/IRequests';
 import { HttpService } from 'src/app/services/http.service';
 
@@ -20,19 +21,21 @@ export class HomeComponent implements OnInit {
   }
 
   selectSunType(event) {
-    this.sun = event.value
+    this.sun = event.target.value;
+    console.log(event.target.value)
   }
 
   selectWaterFrequency(event) {
-    this.water = event.value
+    this.water = event.target.value;
   }
 
   havePets(event) {
-    this.pets = event.value
+    this.pets = event.target.value;
+    console.log('teste')
     this.seacrhPlants();
   }
 
-  seacrhPlants() {
+   seacrhPlants() {
     if (
       this.sun &&
       this.water &&
@@ -43,7 +46,16 @@ export class HomeComponent implements OnInit {
         water: this.water, 
         pets: this.pets
       };
-      this.plantsList = this.httpService.getPlants(dados);
+      this.httpService.getPlants(dados).then(
+        retorno=>{
+          retorno.subscribe(
+            dados=>{
+              console.log(dados)
+              this.plantsList = dados;
+            }
+          )
+        }
+      )
     }
   }
 
