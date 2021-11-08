@@ -22,16 +22,16 @@ export class HomeComponent implements OnInit {
 
   selectSunType(event) {
     this.sun = event.target.value;
-    console.log(event.target.value)
+    this.seacrhPlants();
   }
 
   selectWaterFrequency(event) {
     this.water = event.target.value;
+    this.seacrhPlants();
   }
 
   havePets(event) {
     this.pets = event.target.value;
-    console.log('teste')
     this.seacrhPlants();
   }
 
@@ -50,7 +50,6 @@ export class HomeComponent implements OnInit {
         retorno=>{
           retorno.subscribe(
             dados=>{
-              console.log(dados)
               this.plantsList = dados;
             }
           )

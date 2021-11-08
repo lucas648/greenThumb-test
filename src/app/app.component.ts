@@ -9,6 +9,4 @@ import { HttpService } from './services/http.service';
 })
 export class AppComponent {
   title = 'greenThumb';
-
-  
 }
