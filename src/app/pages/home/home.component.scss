@@ -1,0 +1,211 @@
+
+  @media(max-width: 1207px){
+    .green-thumb{
+      &_body{
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      &_text{
+        justify-content: center;
+        &--box{
+          height: 200px;
+        }
+        &--subtitle{
+          font-size: 40px !important;
+        }
+      }
+  
+      &_body-item{
+        padding: 16px;
+      }
+  
+      &_no-results{
+        flex-direction: column;
+        align-items: center;
+      }
+  
+      &_right-leaves{
+        display: none;
+      }
+    
+      &_left-leaves{
+        height: 320px;
+      }
+    
+      &_plantperson{
+        Height: 234px;
+        width: 200px;
+        align-self: center;
+      }
+    }
+  }
+  
+  @media(max-width:521px){
+    .green-thumb{
+      &_header{
+        flex-direction: column !important;
+      }
+      &_left-leaves{
+        transform: rotate(90deg);
+        width: 550px;
+        height: 500px;
+      }
+    }
+  }
+  li {
+    list-style: none;
+  }
+  .green-thumb{
+    &_header{
+      display: flex;
+      flex-direction: row;
+      background: #75BC97;
+    }
+  
+    &_text{
+      color: #FFFFFF;
+      display: flex;
+      justify-content: space-evenly;
+      &--box{
+        position: absolute;
+        width: 400px;
+      }
+      &--subtitle{
+        font-size: 70px;
+      }
+    }
+  
+    &_body{
+      display: flex;
+      padding: 32px;
+      justify-content: space-around;
+    }
+  
+    &_right-leaves{
+      flex: 1;
+      height: 500px;
+    }
+  
+    &_left-leaves{
+      max-height: 500px;
+    }
+  
+    &_plantperson{
+      max-height: 428px;
+    }
+  
+    &_search-sun{
+      width: 75px;
+      height: 75px;
+    }
+  
+    &_search-wateringcan{
+      width: 103px;
+      height: 75px;
+      transform: rotateY(180deg);
+    }
+  
+    &_search-dog{
+      width: 75px;
+      height: 75px;
+    }
+  
+    &_result{
+      background: #f6f6f6;
+      padding: 32px;
+    }
+  
+    &_no-results{
+      color: #A9A9A9;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+      padding: 32px;
+    }
+  
+    &_select{
+      border-radius: 19px;
+      height: 40px;
+      width: 100%;
+    }
+  
+    &_pick{
+      width: 158px;
+      height: 78px;
+    }
+  
+    &_pick-title{
+      padding-inline-start: 40px;
+    }
+  
+    &_pick-text{
+      font-size: 55px;
+    }
+  
+    &_have-results{
+      display: flex;
+      justify-content: space-around;
+      height: 100%;
+      flex-direction: column;
+      padding: 32px;
+    }
+  
+    &_item-image{
+      width: 107px;
+      height: 161px;
+    }
+  
+    &_list{
+      display: flex;
+      flex-flow: wrap;
+    }
+  
+    &_list-item{
+      padding: 16px;
+    }
+  
+    &_list-container{
+      background: #FFFFFF;
+      color: #1E6B4E;
+      padding: 16px;
+      border-radius: 5px;
+      height: 245px;
+      width: 206px;
+    }
+  
+    &_image-container{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+  
+    &_item-data{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    &_item-title{
+      align-self: flex-start;
+    }
+  
+    &_button{
+      color: #15573F;
+      border: 1px solid #15573F;
+      box-sizing: border-box;
+      border-radius: 25px;
+      align-items: center;
+      height: 50px;
+      background: none;
+      display: flex;
+      justify-content: center;
+      font-size: 16px;
+    }
+  
+    &_button-image{
+      padding: 16px;
+    }
+  
+  }

@@ -1,0 +1,122 @@
+
+<div class="green-thumb_header">
+    <div class="green-thumb_text">
+      <img
+        class="green-thumb_left-leaves"
+        src="assets/images/hero/desktop/left-leaves.png"
+      />
+      <div class="green-thumb_text--box">
+        <p>Green Thumb.</p>
+        <p class="green-thumb_text--subtitle">
+          Find your next green friend
+        </p>
+        <img src="assets/images/icons/arrow-down.svg"/>
+      </div>
+    </div>
+    <img
+      class="green-thumb_plantperson"
+      src="assets/images/hero/desktop/plantperson.png"
+    />
+    <img
+      class="green-thumb_right-leaves"
+      src="assets/images/hero/desktop/right-leaves.png"
+      />
+  </div>
+  <div class="green-thumb_body">
+    <div class="green-thumb_body-item">
+      <img
+        class="green-thumb_search-sun"
+        src="assets/images/illustrations/sun.png"
+      />
+      <p>
+        1. Set the amount of <strong>sunlight</strong> your plant will get.
+      </p>
+      <select
+        class="green-thumb_select"
+        name="sunType"
+        (change)="selectSunType($event)"
+      >
+        <option>Select...</option>
+        <option value="no">No</option>
+        <option value="low">Low</option>
+        <option value="high">High</option>
+      </select>
+    </div>
+    <div class="green-thumb_body-item">
+      <img
+        class="green-thumb_search-wateringcan"
+        src="assets/images/illustrations/wateringcan.png"
+      />
+      <p>2. How often do you want to <strong>water</strong> your plant?</p>
+      <select
+        class="green-thumb_select"
+        name="water"
+        (change)="selectWaterFrequency($event)"
+      >
+        <option>Select...</option>
+        <option value="regularly">Regularly</option>
+        <option value="daily">Daily</option>
+        <option value="rarely">Rarely</option>
+      </select>
+    </div>
+    <div class="green-thumb_body-item">
+      <img
+        class="green-thumb_search-dog"
+        src="assets/images/illustrations/dog.png"
+      />
+      <p>3. Do you have pets? Do they <strong>chew</strong> plants?</p>
+      <select class="green-thumb_select" name="pets" (change)="havePets($event)">
+        <option>Select...</option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+  </div>
+  <div class="green-thumb_result">
+    <div id="no-results" class="green-thumb_no-results">
+      <div>
+        <h1>No results yet…</h1>
+        <p>
+          Use the filters above to find the plant that best fits your
+          environment :)
+        </p>
+      </div>
+      <img src="assets/images/illustrations/no-results.png" />
+    </div>
+    <div
+      *ngIf="plantsList"
+      class="green-thumb_have-results"
+    >
+      <div class="green-thumb_pick-title">
+        <img class="green-thumb_pick" src="assets/images/illustrations/pick.png" />
+          <p class="green-thumb_pick-text">Our picks for you</p>
+      </div>
+      <div>
+        <ul class="green-thumb_list" id="plantsList">
+          <li *ngFor="let item of plantsList" class="green-thumb_list-item">
+            <div class="green-thumb_list-container">
+              <div class="green-thumb_image-container">
+                <img class="green-thumb_item-image" id="plantsImage" src="item.url"/>
+                <p class="green-thumb_item-title">{{item.name}}</p>
+              </div>
+              <div class="green-thumb_item-data">
+                <p>{{item.price}}</p>
+                <div>
+                  <img src="assets/images/icons/pet.svg" />
+                  <img src="assets/images/icons/low-sun.svg" />
+                  <img src="assets/images/icons/3-drops.svg" />
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button class="green-thumb_button" (click)="backToTheTop()">
+        <img
+          class="green-thumb_button-image"
+          src="assets/images/icons/arrow-up.svg"
+        />
+        Back to the top
+      </button>
+    </div>
+  </div>
