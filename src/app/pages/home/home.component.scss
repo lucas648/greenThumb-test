@@ -34,7 +34,7 @@
       }
     
       &_plantperson{
-        Height: 234px;
+        height: 234px;
         width: 200px;
         align-self: center;
       }
@@ -153,15 +153,20 @@
     }
   
     &_item-image{
-      width: 107px;
-      height: 161px;
+      height: 270px;
     }
   
     &_list{
-      display: flex;
-      flex-flow: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin: 0 auto;
     }
-  
+
+    &_list > li:nth-child(1){
+      grid-column: 1/3;
+      grid-row: 1 / 5;
+    }
+
     &_list-item{
       padding: 16px;
     }
@@ -171,8 +176,6 @@
       color: #1E6B4E;
       padding: 16px;
       border-radius: 5px;
-      height: 245px;
-      width: 206px;
     }
   
     &_image-container{
@@ -206,6 +209,10 @@
   
     &_button-image{
       padding: 16px;
+    }
+
+    &_button-container{
+      display: contents;
     }
   
   }

@@ -92,11 +92,11 @@
           <p class="green-thumb_pick-text">Our picks for you</p>
       </div>
       <div>
-        <ul class="green-thumb_list" id="plantsList">
+        <ul class="green-thumb_list">
           <li *ngFor="let item of plantsList" class="green-thumb_list-item">
             <div class="green-thumb_list-container">
               <div class="green-thumb_image-container">
-                <img class="green-thumb_item-image" id="plantsImage" src="{{item.url}}"/>
+                <img class="green-thumb_item-image" src="{{item.url}}"/>
                 <p class="green-thumb_item-title">{{item.name}}</p>
               </div>
               <div class="green-thumb_item-data">
@@ -111,12 +111,14 @@
           </li>
         </ul>
       </div>
-      <button class="green-thumb_button" (click)="backToTheTop()">
-        <img
-          class="green-thumb_button-image"
-          src="assets/images/icons/arrow-up.svg"
-        />
-        Back to the top
-      </button>
+      <div class="green-thumb_button-container">
+        <button class="green-thumb_button" (click)="backToTheTop()">
+          <img
+            class="green-thumb_button-image"
+            src="assets/images/icons/arrow-up.svg"
+          />
+          Back to the top
+        </button>
+      </div>
     </div>
   </div>
