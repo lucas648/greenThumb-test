@@ -21,19 +21,6 @@ export class HttpService {
   ) { }
 
   async getPlants(body: RequestPlants) {
-    //var request = new XMLHttpRequest();
-    //http.service.spec.tsrequest.open(
-      //"get",
-      //`https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${body.sun}&water=${body.water}&pets=${body.pets}`,
-      //true
-    //);
-
-    //request.send();
-
-    //request.onload =  function () {
-      //return JSON.parse(request.response);
-    //};
-
     return this.http.get(`https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${body.sun}&water=${body.water}&pets=${body.pets}`).pipe(
       retry(1),
       map((data:any) =>{

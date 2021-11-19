@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
+import { selectSun, selectWater, selectPets } from './../../store/actions';
+import { Component } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { RequestPlants } from 'src/app/interfaces/IRequests';
 import { HttpService } from 'src/app/services/http.service';
 
@@ -8,30 +10,36 @@ import { HttpService } from 'src/app/services/http.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   sun : string = "";
   water : string = "";
   pets : string = "";
 
   plantsList : any;
 
-  constructor(private httpService : HttpService) { }
+  public plants$ : Observable<any>;
 
-  ngOnInit(): void {
+  constructor(
+    private httpService : HttpService,
+    private store: Store<any>
+  ) { 
+    this.plants$ = store.pipe(
+      select('sunReducer')
+    )
   }
 
   selectSunType(event) {
-    this.sun = event.target.value;
+    this.store.dispatch(selectSun({sun: event.target.value}));
     this.seacrhPlants();
   }
 
   selectWaterFrequency(event) {
-    this.water = event.target.value;
+    this.store.dispatch(selectWater({water: event.target.value}));
     this.seacrhPlants();
   }
 
   havePets(event) {
-    this.pets = event.target.value;
+    this.store.dispatch(selectPets({pets: event.target.value}));
     this.seacrhPlants();
   }
 
